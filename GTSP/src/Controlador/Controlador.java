@@ -23,7 +23,6 @@ import java.util.Observer;
 
 public class Controlador implements ActionListener, Observer
 {
-    public String probando;
     public static final String ADDUSER = "ADDUSER";
     public static final String ADDGRUPO = "ADDGRUPO";
     public static final String ADDCLIENTE = "ADDCLIENTE";
