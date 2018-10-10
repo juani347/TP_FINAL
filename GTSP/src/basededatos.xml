@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_131" class="java.beans.XMLDecoder">
+ <object class="" id="BaseDeDatos0">
+  <void property="listaUsuarios">
+   <void method="add">
+    <object class="">
+     <void property="contraseña">
+      <string>1234</string>
+     </void>
+     <void property="email">
+      <string>admin@gmail.com</string>
+     </void>
+     <void property="nombreApe">
+      <string>Admin</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>admin</string>
+     </void>
+     <void property="perfil">
+      <string>Admisitrador</string>
+     </void>
+     <void property="telefono">
+      <string>1234567</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>

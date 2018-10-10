@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_131" class="java.beans.XMLDecoder">
+ <object class="Modelo.BaseDeDatos" id="BaseDeDatos0">
+  <void property="grupos">
+   <void method="put">
+    <int>2</int>
+    <object class="Modelo.Grupo_de_Clientes">
+     <void property="ID">
+      <int>2</int>
+     </void>
+     <void property="nombre">
+      <string>trabajando 1</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaUsuarios">
+   <void method="put">
+    <string>facu</string>
+    <object class="Modelo.Colaborador">
+     <void property="base">
+      <object idref="BaseDeDatos0"/>
+     </void>
+     <void property="contraseña">
+      <string>1234</string>
+     </void>
+     <void property="email">
+      <string>fac@</string>
+     </void>
+     <void property="nombreApe">
+      <string>facu</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>Colaborador</string>
+     </void>
+     <void property="perfil">
+      <string>facu</string>
+     </void>
+     <void property="telefono">
+      <string>12312</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>franco</string>
+    <object class="Modelo.Colaborador">
+     <void property="base">
+      <object idref="BaseDeDatos0"/>
+     </void>
+     <void property="contraseña">
+      <string>1234</string>
+     </void>
+     <void property="email">
+      <string>franco@</string>
+     </void>
+     <void property="nombreApe">
+      <string>franco</string>
+     </void>
+     <void property="nombreUsuario">
+      <string>Colaborador</string>
+     </void>
+     <void property="perfil">
+      <string>franco</string>
+     </void>
+     <void property="telefono">
+      <string>12312</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
