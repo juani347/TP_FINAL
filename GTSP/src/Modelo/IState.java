@@ -1,7 +1,8 @@
 package Modelo;
 
-import java.util.ArrayList;
 
+/**Interface State
+ */
 public interface IState
 {
     void abrir();

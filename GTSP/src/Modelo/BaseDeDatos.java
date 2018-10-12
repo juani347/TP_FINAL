@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/**Clase base de datos que se encarga de tener todos los datos el programa
+ */
 public class BaseDeDatos
 {
     public static final String SERIALIZED_NAME = "basededatos.xml";
@@ -21,6 +23,9 @@ public class BaseDeDatos
         this.admin = new Administrador("Admin", "admin@gmail.com", "1234567", "Admisitrador", "admin", "1234", this);
     }
 
+    /** metodo que da los nombre  user de los usuarios
+     * @return los nombres de los usuarios en cada campo
+     */
     public String[] darListausarios()
     {
 
@@ -43,6 +48,9 @@ public class BaseDeDatos
         return nombres;
     }
 
+    /**metodo que da los nombre de los clientes
+     * @return los nombres de los cliente en cada campo
+     */
     public String[] darClientes()
     {
         String[] nombres;
@@ -64,6 +72,11 @@ public class BaseDeDatos
         return nombres;
     }
 
+    /**metodo que corrobora si tus datos son los del admin
+     * @param nombreusuario user de usuario
+     * @param pass contraseña 
+     * @return el admin o nulo
+     */
     public Administrador esadmin(String nombreusuario, String pass)
     {
         Administrador resp = null;
@@ -76,6 +89,11 @@ public class BaseDeDatos
         return resp;
     }
 
+    /** busca un usuario en la base de datos
+     * @param nombreusuario nombre se user
+     * @param pass contraseña
+     * @return el usuario que corresponda o nulo
+     */
     public Usuario buscarUsuario(String nombreusuario, String pass)
     {
         Usuario resp = null;
@@ -94,7 +112,10 @@ public class BaseDeDatos
         }
         return resp;
     }
-    
+
+    /**elimina un grupo
+     * @param i id del grupo
+     */
     public void deleteGRupo(int i)
     {
         this.grupos.remove(i);
