@@ -18,17 +18,19 @@ public class Tarea
     private Date fechaCierre=null;
     private IState estado;
     private double costoTotal=0;
+    private static int num=0;
     
     public Tarea(){}
 
-    public Tarea(Colaborador colaborador, Cliente cliente,Servicio servicio, int ID)
+    public Tarea(Colaborador colaborador, Cliente cliente,Servicio servicio)
     {
         //this.colaborador.add(colaborador);
         this.colaborador= colaborador;
         this.cliente = cliente;
         this.fechaInicio = new Date();
         this.estado=new AbiertaState(this);
-        this.ID=ID;
+        num+=1;
+        this.ID=num;
     }
 
 
@@ -118,7 +120,10 @@ public class Tarea
         Integer horas=null;
         return horas;
     }
-    
+
+    /** Metodo que informa estado de la tarea
+     * @return String[] vector string con cada informacion solicitada por campo
+     */
     public String[] getInforme()
     {
         return this.estado.getInforme();

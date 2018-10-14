@@ -40,8 +40,8 @@ public class PausadaState implements IState
         return "Pausada";
     }
 
-    /**Metodo que informa la tarea
-     * @return devuelve un string de informacion
+    /**Metodo que informa estado de la tarea
+     * @return String[] vector string con cada informacion solicitada por campo
      */
     @Override
     public String[] getInforme()

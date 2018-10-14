@@ -31,7 +31,10 @@ public class AbiertaState implements IState
     {
         return "Abierta";
     }
-    
+
+    /**Metodo que informa el estado de la tarea
+     * @return String[] vector string con cada informacion solicitada por campo
+     */
     @Override
     public String[] getInforme()
     {

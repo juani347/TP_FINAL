@@ -169,7 +169,7 @@ public class Administrador extends Usuario
         return informe;
     }
 
-    /**Metodo que informa las tareas de un cliente realizadas dentro de un periodo
+    /**Metodo que informa las tareas realizadas dentro de un periodo para un cliente
      * @param nombre nombre del cliente
      * @param inicio inicio del periodo 
      * @param fin valor final del perido
@@ -197,7 +197,7 @@ public class Administrador extends Usuario
         this.notifyObservers(res);
     }
 
-    /**Metodo que informara las tareas de un colaborador en un periodo
+    /**Metodo que informara las tareas de un colaborador dedicadas a los clientes
      * @param colaborador nombre del colaborador
      * @param inicio inicio del periodo
      * @param fin del periodo
@@ -226,7 +226,7 @@ public class Administrador extends Usuario
         this.notifyObservers(res);
     }
 
-    /**metodo que informa
+    /**metodo que informa tareas realizadas o en curso por un usuario
      * @param usuario
      * @param estado
      * @param inicio

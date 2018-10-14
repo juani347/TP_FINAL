@@ -29,7 +29,7 @@ public class Colaborador extends Usuario
     {
         if (this.ningunaAbierta())
         {
-            Tarea t=new Tarea(this,cliente,servicio,ID);
+            Tarea t=new Tarea(this,cliente,servicio);
             this.base.getTareas().add(t);
             this.tareas.put(ID, t);
         }
@@ -66,7 +66,7 @@ public class Colaborador extends Usuario
         return tareas;
     }
 
-    /**Metodo que verifica que no halla tareas
+    /**Metodo que verifica que no haya tareas abiertas
      * @return true o false
      */
     private boolean ningunaAbierta()
