@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.swing.plaf.nimbus.State;
 
+/** Clase tarea realizada por el Colaborador hacia el cliente
+ */
 public class Tarea
 {
     //private ArrayList<Colaborador> colaborador= new ArrayList<Colaborador>();

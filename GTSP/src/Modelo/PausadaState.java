@@ -1,22 +1,30 @@
 package Modelo;
 
-import java.util.ArrayList;
 
+/**Clase que usa State para la tarea se encarga de pausarla
+ */
 public class PausadaState implements IState
 {
     Tarea tarea;
-    
+
+    /**metodo que pausa la tarea
+     * @param tarea
+     */
     public PausadaState(Tarea tarea)
     {
         this.tarea=tarea;
     }
 
+    /**metodo que continua la tarea
+     */
     @Override
     public void abrir()
     {
         this.tarea.setEstado(new AbiertaState(this.tarea));
     }
 
+    /**metodo que cierra la tarea
+     */
     @Override
     public void cerrar()
     {
@@ -31,7 +39,10 @@ public class PausadaState implements IState
     {
         return "Pausada";
     }
-    
+
+    /**Metodo que informa la tarea
+     * @return devuelve un string de informacion
+     */
     @Override
     public String[] getInforme()
     {
