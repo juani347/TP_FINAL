@@ -1,6 +1,5 @@
 package Modelo;
 
-
 /**Interface State
  */
 public interface IState

@@ -19,8 +19,9 @@ public class Serialize
         super();
     }
     /**
-     *Metodo que serializa la base de datos del programa en un archvio XML
+     *Método que serializa la base de datos del programa en un archvio XML
      * @param bdd Base de datos del programa a serializar, debe ser distinto de null.
+     * @pre bdd!=null
      */
     public static void serializar(BaseDeDatos bdd)
     {

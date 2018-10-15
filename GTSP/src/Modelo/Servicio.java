@@ -2,6 +2,8 @@ package Modelo;
 
 public class Servicio
 {
+    public static String FIJO="FIJO";
+    public static String XHORA="POR HORA";
     private String descripcion;
     private String tipo;
     private double costo;

@@ -1,6 +1,5 @@
 package Modelo;
 
-
 /**Clase que agrupo a los clientes
  */
 public class Grupo_de_Clientes
