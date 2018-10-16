@@ -48,11 +48,6 @@ public class Administrador extends Usuario
         if (this.base.getListaUsuarios().containsKey(nombreUsuario))
             this.base.getListaUsuarios().remove(nombreUsuario);
     }
-    
-    /* public void agregarTarea(Colaborador colaborador, Cliente cliente,Servicio servicio)
-    {
-        this.base.getTareas().add(new Tarea(colaborador,cliente,servicio));
-    } */
 
     /** Metodo que elimina un tarea
      * @param tarea

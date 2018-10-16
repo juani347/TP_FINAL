@@ -1,6 +1,8 @@
 package Modelo;
 
-/**Clase que usa State para la tarea se encarga de pausarla
+/**Clase que usa State para el estado pausada de la tarea
+ * <b>inv: </b><br>
+ * tarea!=null <br>
  */
 public class PausadaState implements IState
 {
@@ -12,6 +14,7 @@ public class PausadaState implements IState
     public PausadaState(Tarea tarea)
     {
         this.tarea=tarea;
+        this.verificaInvariante();
     }
 
     /**metodo que continua la tarea
@@ -53,5 +56,10 @@ public class PausadaState implements IState
         informe[4]=tarea.getEstado().toString();
         informe[5]=tarea.getHoras().toString();
         return informe;
+    }
+    
+    public void verificaInvariante()
+    {
+        assert tarea!=null: "Referencia nula a tarea";
     }
 }

@@ -6,6 +6,15 @@ import java.util.Date;
 import javax.swing.plaf.nimbus.State;
 
 /** Clase tarea realizada por el Colaborador hacia el cliente
+ * <b>inv: </b><br>
+ * ID>=1 <br>
+ * colaborador!=null <br>
+ * cliente!=null <br>
+ * servicio!=null <br>
+ * fechaInicio!=null <br>
+ * estado!=null <br>
+ * costoTotal>=0 <br>
+ * num>1 <br>
  */
 public class Tarea
 {
@@ -31,12 +40,14 @@ public class Tarea
         this.estado=new AbiertaState(this);
         num+=1;
         this.ID=num;
+        this.verificaInvariante();
     }
 
 
     public void setColaborador(Colaborador colaborador)
     {
         this.colaborador = colaborador;
+        this.verificaInvariante();
     }
 
     public Colaborador getColaborador()
@@ -58,6 +69,7 @@ public class Tarea
     public void setCliente(Cliente cliente)
     {
         this.cliente = cliente;
+        this.verificaInvariante();
     }
 
     public Cliente getCliente()
@@ -68,6 +80,7 @@ public class Tarea
     public void setServicio(Servicio servicio)
     {
         this.servicio = servicio;
+        this.verificaInvariante();
     }
 
     public Servicio getServicio()
@@ -78,6 +91,7 @@ public class Tarea
     public void setFechaInicio(Date fechaInicio)
     {
         this.fechaInicio = fechaInicio;
+        this.verificaInvariante();
     }
 
     public Date getFechaInicio()
@@ -98,6 +112,7 @@ public class Tarea
     public void setEstado(IState estado)
     {
         this.estado = estado;
+        this.verificaInvariante();
     }
 
     public IState getEstado()
@@ -108,6 +123,7 @@ public class Tarea
     public void setCostoTotal(double costoTotal)
     {
         this.costoTotal = costoTotal;
+        this.verificaInvariante();
     }
 
     public double getCostoTotal()
@@ -132,10 +148,22 @@ public class Tarea
     public void setID(int ID)
     {
         this.ID = ID;
+        this.verificaInvariante();
     }
 
     public int getID()
     {
         return ID;
+    }
+    
+    private void verificaInvariante()
+    {
+        assert ID>=1: "ID negativa o de valor cero";
+        assert colaborador!=null: "colaborador nulo";
+        assert cliente!=null: "cliente nulo";
+        assert servicio!=null: "servicio nulo";
+        assert fechaInicio!=null: "fechaInicio nula";
+        assert costoTotal>=0: "costoTotal negativo";
+        assert num>1: "num negativo o de valor cero";
     }
 }

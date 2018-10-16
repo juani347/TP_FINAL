@@ -2,6 +2,10 @@ package Modelo;
 
 import java.util.ArrayList;
 
+/**Clase que usa State para el estado abierta de la tarea
+ * <b>inv: </b><br>
+ * tarea!=null <br>
+ */
 public class AbiertaState implements IState
 {
     Tarea tarea;
@@ -9,6 +13,7 @@ public class AbiertaState implements IState
     public AbiertaState(Tarea tarea)
     {
         this.tarea=tarea;
+        this.verificaInvariante();
     }
 
     @Override
@@ -46,5 +51,10 @@ public class AbiertaState implements IState
         informe[4]=tarea.getEstado().toString();
         informe[5]=tarea.getHoras().toString();
         return informe;
+    }
+    
+    public void verificaInvariante()
+    {
+        assert tarea!=null: "Referencia nula a tarea";
     }
 }

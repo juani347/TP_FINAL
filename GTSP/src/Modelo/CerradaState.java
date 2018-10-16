@@ -2,7 +2,9 @@ package Modelo;
 
 import java.util.Date;
 
-/**clase que usa el patron State para la tarea
+/**Clase que usa State para el estado cerrada de la tarea
+ * <b>inv: </b><br>
+ * tarea!=null <br>
  */
 public class CerradaState implements IState
 {
@@ -22,6 +24,7 @@ public class CerradaState implements IState
         }
         else
             this.tarea.setCostoTotal(this.tarea.getServicio().getCosto());
+        this.verificaInvariante();
     }
 
     @Override
@@ -43,5 +46,10 @@ public class CerradaState implements IState
     public String[] getInforme()
     {
         return null;
+    }
+    
+    public void verificaInvariante()
+    {
+        assert tarea!=null: "Referencia nula a tarea";
     }
 }
