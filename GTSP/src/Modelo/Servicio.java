@@ -1,15 +1,15 @@
 package Modelo;
 
+/**
+* <b>inv:</b><br>
+* descripcion!=null<br>
+* !descripcion.equals("")<br>
+* tipo!=null<br>
+* !tipo.equals("")<br>
+* costo>=0
+*/
 public class Servicio
 {
-    /**
-     * <b>inv:</b><br>
-     * descripcion!=null<br>
-     * !descripcion.equals("")<br>
-     * tipo!=null<br>
-     * !tipo.equals("")<br>
-     * costo>=0
-     */
     public static String FIJO="FIJO";
     public static String XHORA="POR HORA";
     private String descripcion;

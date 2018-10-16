@@ -5,11 +5,17 @@ import java.util.Observable;
 /**
  * <b>inv: </b><br>
  * nombreApe!=null <br>
+ * !nombreApe.equals("") <br>
  * email!=null <br>
+ * !email.equals("") <br>
  * telefono!=null <br>
+ * !telefono.equals("") <br>
  * perfil!=null <br>
+ * !perfil.equals("") <br>
  * nombreUsuario!=null <br>
+ * !nombreUsuario.equals("") <br>
  * contraseña!=null <br>
+ * !contraseña.equals("") <br>
  * base!=null <br>
  */
 public class Usuario extends Observable
@@ -119,11 +125,17 @@ public class Usuario extends Observable
     private void verificaInvariante()
     {
         assert nombreApe!=null: "Nombre y Apellido nulo";
+        assert !nombreApe.equals(""): "Nombre y apellido vacio";
         assert email!=null: "Email nulo";
+        assert !email.equals(""): "email vacio";
         assert telefono!=null: "Telefono nulo";
+        assert !telefono.equals(""): "telefono vacio";
         assert perfil!=null: "Perfil nulo";
+        assert !perfil.equals(""): "perfil vacio";
         assert nombreUsuario!=null: "nomreUsuario nulo";
+        assert nombreUsuario.equals(""): "nombreUsuario vacio";
         assert contraseña!=null: "Contrtaseña nula";
+        assert !contraseña.equals(""): "contraseña vacia";
         assert base!=null: "Referencia nula a base de datos";
     }
 }
