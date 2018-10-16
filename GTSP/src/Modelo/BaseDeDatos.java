@@ -5,6 +5,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /**Clase base de datos que se encarga de tener todos los datos el programa
+ * <b>inv:</b><br>
+ * listaUsuarios!=null
+ * clientes!=null
+ * grupos!=null
+ * servicios!=null
+ * tareas!=null
+ * admin!=null
  */
 public class BaseDeDatos
 {
@@ -21,6 +28,7 @@ public class BaseDeDatos
     {
         super();
         this.admin = new Administrador("Admin", "admin@gmail.com", "1234567", "Admisitrador", "admin", "1234", this);
+        this.verificarInvariante();
     }
 
     /** Método que da los una lista de los nombres user de los usuarios
@@ -125,6 +133,7 @@ public class BaseDeDatos
     public void setListaUsuarios(HashMap<String, Usuario> listaUsuarios)
     {
         this.listaUsuarios = listaUsuarios;
+        this.verificarInvariante();
     }
 
     public HashMap<String, Usuario> getListaUsuarios()
@@ -135,6 +144,7 @@ public class BaseDeDatos
     public void setClientes(HashMap<String, Cliente> clientes)
     {
         this.clientes = clientes;
+        this.verificarInvariante();
     }
 
     public HashMap<String, Cliente> getClientes()
@@ -145,6 +155,7 @@ public class BaseDeDatos
     public void setServicios(HashMap<String, Servicio> servicios)
     {
         this.servicios = servicios;
+        this.verificarInvariante();
     }
 
     public HashMap<String, Servicio> getServicios()
@@ -155,6 +166,7 @@ public class BaseDeDatos
     public void setTareas(ArrayList<Tarea> tareas)
     {
         this.tareas = tareas;
+        this.verificarInvariante();
     }
 
     public ArrayList<Tarea> getTareas()
@@ -165,6 +177,7 @@ public class BaseDeDatos
     public void setGrupos(HashMap<Integer, Grupo_de_Clientes> grupos)
     {
         this.grupos = grupos;
+        this.verificarInvariante();
     }
 
     public HashMap<Integer, Grupo_de_Clientes> getGrupos()
@@ -182,14 +195,24 @@ public class BaseDeDatos
         return this.tareas.iterator();
     }
 
-
     public void setAdmin(Administrador admin)
     {
         this.admin = admin;
+        this.verificarInvariante();
     }
 
     public Administrador getAdmin()
     {
         return admin;
+    }
+    
+    private void verificarInvariante()
+    {
+        assert listaUsuarios!=null : "La lista de usuarios es nula";
+        assert clientes!=null : "El HashMap de clientes es nulo";
+        assert grupos!=null : "El HashMap de los grupos de clientes es nulo";
+        assert servicios!=null : "El HashMap de los servicios es nulo";
+        assert tareas!=null : "El HashMap de las tareas es nulo";
+        assert admin!=null : "El admin es nulo";
     }
 }
