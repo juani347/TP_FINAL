@@ -1,6 +1,5 @@
 package Modelo;
 
-
 /**Clase que usa State para la tarea se encarga de pausarla
  */
 public class PausadaState implements IState

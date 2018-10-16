@@ -1,6 +1,5 @@
 package Modelo;
 
-
 /** Clase del cliente a quien los colaboradores realizan la tarea
  */
 public class Cliente

@@ -23,7 +23,7 @@ public class BaseDeDatos
         this.admin = new Administrador("Admin", "admin@gmail.com", "1234567", "Admisitrador", "admin", "1234", this);
     }
 
-    /** metodo que da los nombre  user de los usuarios
+    /** Método que da los una lista de los nombres user de los usuarios
      * @return los nombres de los usuarios en cada campo
      */
     public String[] darListausarios()
@@ -48,7 +48,7 @@ public class BaseDeDatos
         return nombres;
     }
 
-    /**metodo que da los nombre de los clientes
+    /**Método que da los nombres de los clientes
      * @return los nombres de los cliente en cada campo
      */
     public String[] darClientes()
@@ -72,10 +72,11 @@ public class BaseDeDatos
         return nombres;
     }
 
-    /**metodo que corrobora si tus datos son los del admin
+    /**Método que corrobora si tus datos son los del admin
      * @param nombreusuario user de usuario
      * @param pass contraseña 
      * @return el admin o nulo
+     * @pre Ambos parámetros deben ser distintos de null.<br>
      */
     public Administrador esadmin(String nombreusuario, String pass)
     {
@@ -93,13 +94,12 @@ public class BaseDeDatos
      * @param nombreusuario nombre se user
      * @param pass contraseña
      * @return el usuario que corresponda o nulo
+     * @pre Ambos parámetros deben ser distintos de null.<br>
      */
     public Usuario buscarUsuario(String nombreusuario, String pass)
     {
         Usuario resp = null;
-
         int i = this.listaUsuarios.size();
-
         Iterator it = this.listaUsuarios
                           .values()
                           .iterator();
@@ -115,6 +115,7 @@ public class BaseDeDatos
 
     /**elimina un grupo
      * @param i id del grupo
+     * @pre i>=0<br>
      */
     public void deleteGRupo(int i)
     {

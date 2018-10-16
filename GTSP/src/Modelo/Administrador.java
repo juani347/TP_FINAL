@@ -27,7 +27,7 @@ public class Administrador extends Usuario
      * @param contraseña    Contraseña del usuario para el logeo
      * @param base  Base de datos donde se va a cargar el usuario
      * @throws OtraException  se lanza cuando el nombre de usuario ya existia en nuestra base de datos
-     * <b>pre:</b> <br>
+     * <b>pre:</b> La base de datos puede poseer o no un usuario con ese nombre.<br>Todos los parametros deben ser distintos de null.<br>
      * <b>post:</b> Se agrego un usuario si no existia uno con ese nombre de usuario.<br>
      */
     public void agregarUsuario(String nombreApe, String email, String telefono, String nombreUsuario, String contraseña,BaseDeDatos base) throws OtraException
@@ -40,7 +40,7 @@ public class Administrador extends Usuario
 
     /** Metodo que elimina un usuario de la base de datos si existe en ella
      * @param nombreUsuario Nombre del usuario que se va a eliminar
-     * <b>pre:</b>el Usuario esta en el programa<br>
+     * <b>pre:</b>El usuario esta en el programa.<br>nombreUsuario != null<br>
      * <b>post:</b> Se elimina al participante del programa.<br>
      */
     public void eliminarUsuario(String nombreUsuario)
@@ -56,7 +56,7 @@ public class Administrador extends Usuario
 
     /** Metodo que elimina un tarea
      * @param tarea
-     * <b>pre:</b>La tarea debe estar en la base de datso<br>
+     * <b>pre:</b>La tarea debe estar en la base de datos.<br>tarea != null<br>
      * <b>post:</b> Se elimina al participante de la base de datos.<br>
      */
     public void eliminarTarea(Tarea tarea)
@@ -65,10 +65,10 @@ public class Administrador extends Usuario
     }
 
     /**Metodo que agrega un grupo a la base de datos
-     * @param nombre nombre del grupo 
-     * @param ID id indentificador del grupo 
+     * @param nombre nombre del grupo
+     * @param ID indentificador del grupo
      * @throws OtraException cuando se intenta crear un grupo con una id que ya existia
-     *  <b>pre:</b>No importa si hay o no grupos anteriores<br>
+     * <b>pre:</b>No importa si hay o no grupos anteriores.<br>nombre != null y ID >=0<br>
      * <b>post:</b>Se agrega un grupo si la id no existia anteriormente.<br>
      */
     public void agregarGrupo(String nombre, int ID) throws OtraException
@@ -80,7 +80,7 @@ public class Administrador extends Usuario
 
     /**metodo que elimina un grupo
      * @param grupo que se desea eliminar
-     * <b>pre:</b>el grupo debe ser no nulo<br>
+     * <b>pre:</b>El grupo debe ser no nulo.<br>
      * <b>post:</b>Se elimina elimino el grupo si la id existia.<br>
      */
     public void eliminarGrupo(Grupo_de_Clientes grupo)
@@ -93,7 +93,7 @@ public class Administrador extends Usuario
      * @param tipo de servicio que realiza el colaborador
      * @param costo que se cotizara 
      * @throws OtraException cuando la descripcion del servicio ya existia
-     *  <b>pre:</b>no importa si hay o no servicios anteriores<br>
+     *  <b>pre:</b>No importa si hay o no servicios anteriores<br>descrpcion!=null,tipo!=null,costo>0<br>
      * <b>post:</b>Agrega un servicio si la descripcion no exisita anteriormente<br>
      */
     public void agregarServicio(String descripcion, String tipo, double costo) throws OtraException
@@ -107,7 +107,7 @@ public class Administrador extends Usuario
     /**Metodo que elimina un servicio
      * @param descripcion del servicio q se desea borrar
      * @throws OtraException cuando la descripcion del servicio no correspondia con ninguno en la base de datos
-     *  <b>pre:</b>la descripcion puede ser existir o no<br>
+     *  <b>pre:</b>La descripcion puede ser existir o no<br>descrpcion!=null,tipo!=null,costo>0<br>
      * <b>post:</b>Se elimina el servicio si exisita esa descripcion.<br>
      */
     public void eliminarServicio(String descripcion) throws OtraException
@@ -126,7 +126,7 @@ public class Administrador extends Usuario
      * @param razonSocial del cliente
      * @param grupoClientes id que indentifica al grupo 
      * @throws OtraException cuando el nombreApe ya estaba registrado en la base de datos
-     *  <b>pre:</b>no importa si habia cliente anteriormente o no <br>
+     *  <b>pre:</b>No importa si habia cliente anteriormente o no.<br>Todos los parametros deben ser distintos de null.<br>
      * <b>post:</b>Agrega un cliente si este tiene un nombreApe distinto a los de la base de datos<br>
      */
     public void agregarCliente(String nombreApe, String email, String telefono, String CUIT, String razonSocial,String grupoClientes) throws OtraException
@@ -140,7 +140,7 @@ public class Administrador extends Usuario
     /** Metodo que elimina un cliente 
      * @param nombreApe nombre de cliente que se sea borrar
      * @throws OtraException cuando el nombre del cliente no existia en la base de datos
-     *  <b>pre:</b>el nombre del cliente puede existir o no <br>
+     *  <b>pre:</b>El nombre del cliente puede existir o no.<br>nombreApe!=null<br>
      * <b>post:</b>Se elimina el cliente solo si el nombre existia.<br>
      */
     public void eliminarCliente(String nombreApe) throws OtraException
@@ -173,8 +173,8 @@ public class Administrador extends Usuario
      * @param nombre nombre del cliente
      * @param inicio inicio del periodo 
      * @param fin valor final del perido
-     *  <b>pre:</b>el cliente debe existir en la base de datos<br>
-     * <b>post:</b>le pasa un String del informe al observador.<br>
+     * <b>pre:</b>El cliente debe existir en la base de datos<br>Todos los parametros deben ser distintos de null.<br>
+     * <b>post:</b>Le pasa un String del informe al observador.<br>
      */
     public void informeTareasPeriodo(String nombre,Date inicio,Date fin)
     {   
@@ -201,7 +201,7 @@ public class Administrador extends Usuario
      * @param colaborador nombre del colaborador
      * @param inicio inicio del periodo
      * @param fin del periodo
-     *  <b>pre:</b>el nombre del colaborador debe corresponder con un colaborador en la base de datos<br>
+     * <b>pre:</b>El nombre del colaborador debe corresponder con un colaborador en la base de datos<br>Todos los parametros deben ser distintos de null.<br>
      * <b>post:</b>Se informara un string al observador<br>
      */
     public void informeTareasColaborador(String colaborador,Date inicio,Date fin)
@@ -231,6 +231,8 @@ public class Administrador extends Usuario
      * @param estado
      * @param inicio
      * @param fin
+     * <b>pre:</b>El nombre de usuario debe corresponder con un colaborador en la base de datos<br>Todos los parametros deben ser distintos de null.<br>
+     * <b>post:</b>Se informara un string al observador<br>
      */
     public void informeTareasUsuario(String usuario,String estado,Date inicio,Date fin)
     {
