@@ -60,6 +60,7 @@ public class PausadaState implements IState
         return informe;
     }
     
+    
     public void verificaInvariante()
     {
         assert tarea!=null: "Referencia nula a tarea";
