@@ -182,7 +182,10 @@ public class Administrador extends Usuario
             Tarea t=it.next();
             if(t.getCliente().equals(cliente)&&(t.getFechaInicio().after(inicio)&&t.getFechaInicio().before(fin)))
             {
-                horas=((t.getFechaCierre().getTime() - t.getFechaInicio().getTime())/1000)/3600;
+                if (t.getFechaCierre()==null)
+                    horas=((new Date().getTime() - t.getFechaInicio().getTime())/1000)/3600;
+                else
+                    horas=((t.getFechaCierre().getTime() - t.getFechaInicio().getTime())/1000)/3600;
                 tot+=t.getCostoTotal();
                 res+=t.getServicio().getDescripcion()+"   "+horas+"   "+t.getCostoTotal()+"\n";
             }
@@ -211,7 +214,10 @@ public class Administrador extends Usuario
             aux=it.next();
             if(aux.getFechaInicio().after(inicio)&&aux.getFechaInicio().before(fin))
             {
-                horas=((aux.getFechaCierre().getTime()-aux.getFechaInicio().getTime())/1000)/3600;
+                if (aux.getFechaCierre()==null)
+                    horas=((new Date().getTime() - aux.getFechaInicio().getTime())/1000)/3600;
+                else
+                    horas=((aux.getFechaCierre().getTime()-aux.getFechaInicio().getTime())/1000)/3600;
                 tot+=horas;
                 res+=aux.getCliente()+"   "+aux.getServicio()+"   "+horas+"\n";   
             }
@@ -244,7 +250,10 @@ public class Administrador extends Usuario
                 if(estado.equalsIgnoreCase("Todos")||estado.equalsIgnoreCase(aux.toString()))
                 {
                     dataux=new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-                    horas=((aux.getFechaCierre().getTime()-aux.getFechaInicio().getTime())/1000)/3600;
+                    if (aux.getFechaCierre()==null)
+                        horas=((new Date().getTime() - aux.getFechaInicio().getTime())/1000)/3600;
+                    else
+                        horas=((aux.getFechaCierre().getTime()-aux.getFechaInicio().getTime())/1000)/3600;
                     if(aux.getFechaInicio().after(inicio)&&aux.getFechaInicio().before(fin))
                         res+=aux.getCliente()+"   "+aux.getServicio().getDescripcion()+"   "+dataux.format(inicio)+"   "+aux.getEstado().toString()+"   "+horas+"\n";
                 }
