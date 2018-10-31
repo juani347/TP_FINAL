@@ -60,7 +60,11 @@ public class Colaborador extends Usuario
     {
         tareas.get(ID).getEstado().cerrar();
     }
-
+    
+    /**
+     * @param tareas
+     * <b>pre:</b> tareas!=null
+     */
     public void setTareas(HashMap<Integer, Tarea> tareas)
     {
         this.tareas = tareas;

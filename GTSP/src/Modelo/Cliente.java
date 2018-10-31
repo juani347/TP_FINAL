@@ -37,7 +37,11 @@ public class Cliente
         this.grupoClientes = grupoClientes;
         this.verificarInvariante();
     }
-
+    
+    /**
+     * @param nombreApe
+     * <b>pre:</b> nombreApe!=null && !nombreApe.equals("")
+     */
     public void setNombreApe(String nombreApe)
     {
         this.nombreApe = nombreApe;
@@ -48,7 +52,11 @@ public class Cliente
     {
         return nombreApe;
     }
-
+    
+    /**
+     * @param email
+     * <b>pre:</b> email!=null && !email.equals("")
+     */
     public void setEmail(String email)
     {
         this.email = email;
@@ -60,6 +68,10 @@ public class Cliente
         return email;
     }
 
+    /**
+     * @param telefono
+     * <b>pre:</b> telefono!=null && !telefono.equals("")
+     */
     public void setTelefono(String telefono)
     {
         this.telefono = telefono;
@@ -70,7 +82,11 @@ public class Cliente
     {
         return telefono;
     }
-
+    
+    /**
+     * @param CUIT
+     * <b>pre:</b> CUIT!=null && !CUIT.equals("")
+     */
     public void setCUIT(String CUIT)
     {
         this.CUIT = CUIT;
@@ -81,7 +97,11 @@ public class Cliente
     {
         return CUIT;
     }
-
+    
+    /**
+     * @param razonSocial
+     * <b>pre:</b> razonSocial!=null && !razonSocial.equals("")
+     */
     public void setRazonSocial(String razonSocial)
     {
         this.razonSocial = razonSocial;
@@ -92,7 +112,11 @@ public class Cliente
     {
         return razonSocial;
     }
-
+    
+    /**
+     * @param grupoClientes
+     * <b>pre:</b> grupoClientes!=null && !grupoClientes.equals("")
+     */
     public void setGrupoClientes(String grupoClientes)
     {
         this.grupoClientes = grupoClientes;

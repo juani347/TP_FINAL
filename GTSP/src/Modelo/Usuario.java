@@ -53,7 +53,11 @@ public class Usuario extends Observable
         this.base=base;
         this.verificaInvariante();
     }
-
+    
+    /**
+     * @param nomApe
+     * <b>pre:</b> nomApe!=null && !nomApe.equals("")
+     */
     public void setNombreApe(String nomApe)
     {
         this.nombreApe = nomApe;
@@ -64,7 +68,11 @@ public class Usuario extends Observable
     {
         return nombreApe;
     }
-
+    
+    /**
+     * @param email
+     * <b>pre:</b> email!=null && !email.equals("")
+     */
     public void setEmail(String email)
     {
         this.email = email;
@@ -75,7 +83,11 @@ public class Usuario extends Observable
     {
         return email;
     }
-
+    
+    /**
+     * @param telefono
+     * <b>pre:</b> telefono!=null && !telefono.equals("")
+     */
     public void setTelefono(String telefono)
     {
         this.telefono = telefono;
@@ -86,7 +98,11 @@ public class Usuario extends Observable
     {
         return telefono;
     }
-
+    
+    /**
+     * @param perfil
+     * <b>pre:</b> perfil!=null && !perfil.equals("")
+     */
     public void setPerfil(String perfil)
     {
         this.perfil = perfil;
@@ -97,7 +113,11 @@ public class Usuario extends Observable
     {
         return perfil;
     }
-
+    
+    /**
+     * @param nombreUsuario
+     * <b>pre:</b> nombreUsuario!=null && !nombreUsuario("")
+     */
     public void setNombreUsuario(String nombreUsuario)
     {
         this.nombreUsuario = nombreUsuario;
@@ -108,7 +128,11 @@ public class Usuario extends Observable
     {
         return nombreUsuario;
     }
-
+    
+    /**
+     * @param contraseña
+     * <b>pre:</b> contraseña!=null && !contraseña.equals("")
+     */
     public void setContraseña(String contraseña)
     {
         this.contraseña = contraseña;
@@ -119,7 +143,11 @@ public class Usuario extends Observable
     {
         return contraseña;
     }
-
+    
+    /**
+     * @param base
+     * <b>pre:</b> base!=null
+     */
     public void setBase(BaseDeDatos base)
     {
         this.base = base;

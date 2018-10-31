@@ -28,7 +28,11 @@ public class Servicio
         this.costo = costo;
         this.verificaInvariante();
     }
-
+    
+    /**
+     * @param descripcion
+     * <b>pre:</b> descripcion!=null && !descripcion.equals("")
+     */
     public void setDescripcion(String descripcion)
     {
         this.descripcion = descripcion;
@@ -39,7 +43,11 @@ public class Servicio
     {
         return descripcion;
     }
-
+    
+    /**
+     * @param tipo
+     * <b>pre:</b> tipo!=null && !tipo.equals("")
+     */
     public void setTipo(String tipo)
     {
         this.tipo = tipo;
@@ -50,7 +58,11 @@ public class Servicio
     {
         return tipo;
     }
-
+    
+    /**
+     * @param costo
+     * <b>pre:</b> costo>=0
+     */
     public void setCosto(double costo)
     {
         this.costo = costo;

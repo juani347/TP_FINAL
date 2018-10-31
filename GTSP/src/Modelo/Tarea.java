@@ -41,7 +41,10 @@ public class Tarea
         this.verificaInvariante();
     }
 
-
+    /**
+     * @param colaborador
+     * <b>pre:</b> colaborador!=null
+     */
     public void setColaborador(Colaborador colaborador)
     {
         this.colaborador = colaborador;
@@ -52,7 +55,11 @@ public class Tarea
     {
         return colaborador;
     }
-
+    
+    /**
+     * @param cliente
+     * <b>pre:</b> cliente!=null
+     */
     public void setCliente(Cliente cliente)
     {
         this.cliente = cliente;
@@ -63,7 +70,11 @@ public class Tarea
     {
         return cliente;
     }
-
+    
+    /**
+     * @param servicio
+     * <b>pre:</b> servicio!=null
+     */
     public void setServicio(Servicio servicio)
     {
         this.servicio = servicio;
@@ -74,7 +85,11 @@ public class Tarea
     {
         return servicio;
     }
-
+    
+    /**
+     * @param fechaInicio
+     * <b>pre:</b> fechaInicio!=null
+     */
     public void setFechaInicio(Date fechaInicio)
     {
         this.fechaInicio = fechaInicio;
@@ -86,6 +101,10 @@ public class Tarea
         return fechaInicio;
     }
 
+    /**
+     * @param fechaCierre
+     * <b>pre:</b> fechaCierre!=null
+     */
     public void setFechaCierre(Date fechaCierre)
     {
         this.fechaCierre = fechaCierre;
@@ -95,7 +114,11 @@ public class Tarea
     {
         return fechaCierre;
     }
-
+    
+    /**
+     * @param estado
+     * <b>pre:</b> estado!=null
+     */
     public void setEstado(IState estado)
     {
         this.estado = estado;
@@ -106,7 +129,11 @@ public class Tarea
     {
         return estado;
     }
-
+    
+    /**
+     * @param costoTotal
+     * <b>pre:</b> costoTotal>=0
+     */
     public void setCostoTotal(double costoTotal)
     {
         this.costoTotal = costoTotal;
@@ -131,7 +158,11 @@ public class Tarea
     {
         return this.estado.getInforme();
     }
-
+    
+    /**
+     * @param ID
+     * <b>pre:</b> ID>0
+     */
     public void setID(int ID)
     {
         this.ID = ID;
