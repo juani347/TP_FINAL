@@ -27,7 +27,11 @@ public class Grupo_de_Clientes
         this.ID = ID;
         this.verificarInvariante();
     }
-
+    
+    /**
+     * @param nombre
+     * <b>pre:</b> nombre!=null && !nombre.equals("")
+     */
     public void setNombre(String nombre)
     {
         this.nombre = nombre;
@@ -38,7 +42,11 @@ public class Grupo_de_Clientes
     {
         return nombre;
     }
-
+    
+    /**
+     * @param ID
+     * <b>pre:</b> ID>0
+     */
     public void setID(int ID)
     {
         this.ID = ID;

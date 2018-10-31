@@ -107,18 +107,25 @@ public class BaseDeDatos
     {
         this.grupos.remove(i);
     }
-
+    
+    /**
+     * @param listaUsuarios!=null
+     */
     public void setListaUsuarios(HashMap<String, Usuario> listaUsuarios)
     {
         this.listaUsuarios = listaUsuarios;
         this.verificarInvariante();
     }
-
+    
     public HashMap<String, Usuario> getListaUsuarios()
     {
         return listaUsuarios;
     }
 
+    /**
+     * @param clientes
+     * <b>pre:</b>clientes!=null
+     */
     public void setClientes(HashMap<String, Cliente> clientes)
     {
         this.clientes = clientes;
@@ -129,7 +136,11 @@ public class BaseDeDatos
     {
         return clientes;
     }
-
+    
+    /**
+     * @param servicios
+     * <b>pre:</b> servicios!=null
+     */
     public void setServicios(HashMap<String, Servicio> servicios)
     {
         this.servicios = servicios;
@@ -141,6 +152,10 @@ public class BaseDeDatos
         return servicios;
     }
 
+    /**
+     * @param tareas
+     * <b>pre:</b> tareas!=null
+     */
     public void setTareas(ArrayList<Tarea> tareas)
     {
         this.tareas = tareas;
@@ -151,7 +166,11 @@ public class BaseDeDatos
     {
         return tareas;
     }
-
+    
+    /**
+     * @param grupos
+     * <b>pre:</b> grupos!=null
+     */
     public void setGrupos(HashMap<Integer, Grupo_de_Clientes> grupos)
     {
         this.grupos = grupos;
@@ -173,6 +192,10 @@ public class BaseDeDatos
         return this.tareas.iterator();
     }
 
+    /**
+     * @param admin
+     * <b>pre:</b> admin!=nul
+     */
     public void setAdmin(Administrador admin)
     {
         this.admin = admin;
