@@ -25,7 +25,7 @@ public class Colaborador extends Usuario
      * @param cliente a quien se le realiza
      * @param servicio elegido para la tarea
      * @throws GeneralException cuando el colaborador se encuentra haciendo una tarea en este momento
-     * @pre ID>=0<br>
+     * <b>pre:</b> ID>=0<br>
      * cliente!=null<br>
      * servicio!=null<br>
      */
@@ -43,7 +43,7 @@ public class Colaborador extends Usuario
 
     /**metodo que continua con la tarea
      * @param ID de la tarea
-     * @pre ID>=0.<br>
+     * <b>pre:</b> ID>=0.<br>
      */
     public void abrirTarea(int ID)
     {
