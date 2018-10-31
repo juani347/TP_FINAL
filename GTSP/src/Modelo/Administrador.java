@@ -24,18 +24,18 @@ public class Administrador extends Usuario
      * @param email Email del Usuario agregado
      * @param telefono Telefono del Usuario agregado
      * @param nombreUsuario Nombre de usuario para el logeo
-     * @param contraseña    Contraseña del usuario para el logeo
-     * @param base  Base de datos donde se va a cargar el usuario
-     * @throws OtraException  se lanza cuando el nombre de usuario ya existia en nuestra base de datos
+     * @param contraseña Contraseña del usuario para el logeo
+     * @param base Base de datos donde se va a cargar el usuario
+     * @throws GeneralException se lanza cuando el nombre de usuario ya existia en nuestra base de datos
      * <b>pre:</b> La base de datos puede poseer o no un usuario con ese nombre.<br>Todos los parametros deben ser distintos de null.<br>
      * <b>post:</b> Se agrego un usuario si no existia uno con ese nombre de usuario.<br>
      */
-    public void agregarUsuario(String nombreApe, String email, String telefono, String nombreUsuario, String contraseña,BaseDeDatos base) throws OtraException
+    public void agregarUsuario(String nombreApe, String email, String telefono, String nombreUsuario, String contraseña,BaseDeDatos base) throws GeneralException
     {
         if (this.base.getListaUsuarios().containsKey(nombreUsuario))
-            throw new OtraException("Nombre de usuario ya existente");
+            throw new GeneralException("Nombre de usuario ya existente");
         else
-            this.base.getListaUsuarios().put(nombreUsuario,new Colaborador(nombreApe,email,telefono,nombreUsuario,contraseña,base));
+            this.base.getListaUsuarios().put(nombreUsuario,new Colaborador(nombreApe,email,telefono,"colaborador",nombreUsuario,contraseña,base));
     }
 
     /** Metodo que elimina un usuario de la base de datos si existe en ella
@@ -62,14 +62,14 @@ public class Administrador extends Usuario
     /**Metodo que agrega un grupo a la base de datos
      * @param nombre nombre del grupo
      * @param ID indentificador del grupo
-     * @throws OtraException cuando se intenta crear un grupo con una id que ya existia
+     * @throws GeneralException cuando se intenta crear un grupo con una id que ya existia
      * <b>pre:</b>No importa si hay o no grupos anteriores.<br>nombre != null y ID >=0<br>
      * <b>post:</b>Se agrega un grupo si la id no existia anteriormente.<br>
      */
-    public void agregarGrupo(String nombre, int ID) throws OtraException
+    public void agregarGrupo(String nombre, int ID) throws GeneralException
     {
         if (this.base.getGrupos().containsKey(ID))
-            throw new OtraException("Grupo de cliente ya existente");
+            throw new GeneralException("Grupo de cliente ya existente");
         this.base.getGrupos().put(ID,new Grupo_de_Clientes(nombre,ID));
     }
 
@@ -86,80 +86,100 @@ public class Administrador extends Usuario
     /**Agrega un servicio a la base de datos
      * @param descripcion del servicio
      * @param tipo de servicio que realiza el colaborador
-     * @param costo que se cotizara 
-     * @throws OtraException cuando la descripcion del servicio ya existia
-     *  <b>pre:</b>No importa si hay o no servicios anteriores<br>descrpcion!=null,tipo!=null,costo>0<br>
+     * @param costo que se cotizara
+     * @throws GeneralException cuando la descripcion del servicio ya existia
+     * <b>pre:</b>No importa si hay o no servicios anteriores<br>descrpcion!=null,tipo!=null,costo>0<br>
      * <b>post:</b>Agrega un servicio si la descripcion no exisita anteriormente<br>
      */
-    public void agregarServicio(String descripcion, String tipo, double costo) throws OtraException
+    public void agregarServicio(String descripcion, String tipo, double costo) throws GeneralException
     {
         if (this.base.getServicios().containsKey(descripcion))
-            throw new OtraException("Servicio ya existente");
+            throw new GeneralException("Servicio ya existente");
         else
             this.base.getServicios().put(descripcion, new Servicio(descripcion,tipo,costo));
     }
 
     /**Metodo que elimina un servicio
      * @param descripcion del servicio q se desea borrar
-     * @throws OtraException cuando la descripcion del servicio no correspondia con ninguno en la base de datos
-     *  <b>pre:</b>La descripcion puede ser existir o no<br>descrpcion!=null,tipo!=null,costo>0<br>
+     * @throws GeneralException cuando la descripcion del servicio no correspondia con ninguno en la base de datos
+     * <b>pre:</b>La descripcion puede ser existir o no<br>descrpcion!=null,tipo!=null,costo>0<br>
      * <b>post:</b>Se elimina el servicio si exisita esa descripcion.<br>
      */
-    public void eliminarServicio(String descripcion) throws OtraException
+    public void eliminarServicio(String descripcion) throws GeneralException
     {
         if (this.base.getServicios().containsKey(descripcion))
             this.base.getServicios().remove(descripcion);
         else
-            throw new OtraException("No existe el servicio");
+            throw new GeneralException("No existe el servicio");
     }
 
     /**metodo que agrega un cliente
-     * @param nombreApe nombre y apellido del cliente 
+     * @param nombreApe nombre y apellido del cliente
      * @param email del cliente
      * @param telefono del cliente
      * @param CUIT del cliente
      * @param razonSocial del cliente
-     * @param grupoClientes id que indentifica al grupo 
-     * @throws OtraException cuando el nombreApe ya estaba registrado en la base de datos
-     *  <b>pre:</b>No importa si habia cliente anteriormente o no.<br>Todos los parametros deben ser distintos de null.<br>
+     * @param grupoClientes id que indentifica al grupo
+     * @throws GeneralException cuando el nombreApe ya estaba registrado en la base de datos
+     * <b>pre:</b>No importa si habia cliente anteriormente o no.<br>Todos los parametros deben ser distintos de null.<br>
      * <b>post:</b>Agrega un cliente si este tiene un nombreApe distinto a los de la base de datos<br>
      */
-    public void agregarCliente(String nombreApe, String email, String telefono, String CUIT, String razonSocial,String grupoClientes) throws OtraException
+    public void agregarCliente(String nombreApe, String email, String telefono, String CUIT, String razonSocial,String grupoClientes) throws GeneralException
     {
         if (this.base.getClientes().containsKey(nombreApe))
-            throw new OtraException("Cliente ya registrado");
+            throw new GeneralException("Cliente ya registrado");
         else
             this.base.getClientes().put(nombreApe, new Cliente(nombreApe,email,telefono,CUIT,razonSocial,grupoClientes));
     }
 
-    /** Metodo que elimina un cliente 
+    /**Metodo que elimina un cliente
      * @param nombreApe nombre de cliente que se sea borrar
-     * @throws OtraException cuando el nombre del cliente no existia en la base de datos
-     *  <b>pre:</b>El nombre del cliente puede existir o no.<br>nombreApe!=null<br>
+     * @throws GeneralException cuando el nombre del cliente no existia en la base de datos
+     * <b>pre:</b>El nombre del cliente puede existir o no.<br>nombreApe!=null<br>
      * <b>post:</b>Se elimina el cliente solo si el nombre existia.<br>
      */
-    public void eliminarCliente(String nombreApe) throws OtraException
+    public void eliminarCliente(String nombreApe) throws GeneralException
     {
         if (this.base.getClientes().containsKey(nombreApe))
             this.base.getClientes().remove(nombreApe);
         else
-            throw new OtraException("No existe el cliente");
+            throw new GeneralException("No existe el cliente");
     }
 
     /**Metodo que hace informe de estado de las tareas
      * @return un Arraylist de String sobre las tareas
      *  <b>pre:</b>Puede haber tareas en la base de datos o no<br>
+     *  @param colaborador!=null <br>
      * <b>post:</b>Devuelve un informe sobre sus tareas.<br>
      */
-    public ArrayList<String[]> informeEstadoTareas()
+    public ArrayList<String[]> informeEstadoTareas(String colaborador)
     {
         ArrayList<String[]> informe=new ArrayList<String[]>();
+        String[] aux;
         Iterator<Tarea> it= this.base.getTareas().iterator();
-        while (it.hasNext())
+        if (colaborador.equalsIgnoreCase("todos"))
         {
-            String[] aux= it.next().getInforme();
-            if (aux!=null)
-                informe.add(aux);
+            while (it.hasNext())
+            {
+                aux= it.next().getInforme();
+                if (aux!=null)
+                    informe.add(aux);
+            }
+        }
+        else
+        {
+            boolean encontrado=false;
+            while (it.hasNext() && !encontrado)
+            {
+                Tarea tarea=it.next();
+                if (tarea.getColaborador().equals(colaborador))
+                {
+                    encontrado=true;
+                    aux= tarea.getInforme();
+                    if (aux!=null)
+                        informe.add(aux);
+                }
+            }
         }
         return informe;
     }

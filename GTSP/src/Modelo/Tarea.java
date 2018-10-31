@@ -18,7 +18,6 @@ import javax.swing.plaf.nimbus.State;
  */
 public class Tarea
 {
-    //private ArrayList<Colaborador> colaborador= new ArrayList<Colaborador>();
     private int ID;
     private Colaborador colaborador;
     private Cliente cliente;
@@ -33,7 +32,6 @@ public class Tarea
 
     public Tarea(Colaborador colaborador, Cliente cliente,Servicio servicio)
     {
-        //this.colaborador.add(colaborador);
         this.colaborador= colaborador;
         this.cliente = cliente;
         this.fechaInicio = new Date();
@@ -54,17 +52,6 @@ public class Tarea
     {
         return colaborador;
     }
-
-    /* public void setColaborador(ArrayList<Colaborador> colaborador)
-    {
-        this.colaborador = colaborador;
-    }
-
-    public ArrayList<Colaborador> getColaborador()
-    {
-        return colaborador;
-    } */
-
 
     public void setCliente(Cliente cliente)
     {

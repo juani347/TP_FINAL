@@ -24,10 +24,10 @@ public class Colaborador extends Usuario
      * @param ID de la tarea
      * @param cliente a quien se le realiza
      * @param servicio elegido para la tarea
-     * @throws OtraException cuando el colaborador se encuentra haciendo una tarea en este momento
+     * @throws GeneralException cuando el colaborador se encuentra haciendo una tarea en este momento
      * @pre ID>=0,El resto de los parametros deben ser distintos de null.<br>
      */
-    public void agregarTarea(int ID,Cliente cliente,Servicio servicio) throws OtraException
+    public void agregarTarea(int ID,Cliente cliente,Servicio servicio) throws GeneralException
     {
         if (this.ningunaAbierta())
         {
@@ -36,7 +36,7 @@ public class Colaborador extends Usuario
             this.tareas.put(ID, t);
         }
         else
-            throw new OtraException("Hay tareas abiertas");
+            throw new GeneralException("Hay tareas abiertas");
     }
 
     /**metodo que continua con la tarea

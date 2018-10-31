@@ -2,14 +2,14 @@ package Modelo;
 
 /**Clase de excepcion que se manejan
  */
-public class OtraException extends Exception
+public class GeneralException extends Exception
 {
-    public OtraException(String string)
+    public GeneralException(String string)
     {
         super(string);
     }
 
-    public OtraException()
+    public GeneralException()
     {
         super();
     }

@@ -2,7 +2,7 @@ package Controlador;
 
 import Modelo.Administrador;
 import Modelo.BaseDeDatos;
-import Modelo.OtraException;
+import Modelo.GeneralException;
 import Modelo.Serialize;
 import Modelo.Usuario;
 
@@ -110,7 +110,7 @@ public class Controlador implements ActionListener, Observer
                 this.ventanGeneral.addActionListener(this);
             } else
             {
-                this.usuario = this.bdd.buscarUsuario(nombreusuario, pass);
+               // this.usuario = this.bdd.buscarUsuario(nombreusuario, pass);
                 if (this.usuario != null)
                 {
                     /**Ventana COLABORADOR*/
@@ -132,7 +132,7 @@ public class Controlador implements ActionListener, Observer
                     {
                         this.admin.agregarGrupo(nombre, id);
                         this.ventanGeneral.mostrarValidacion("Creacion exitosa", "Creando Grupo");
-                    } catch (OtraException e)
+                    } catch (GeneralException e)
                     {
                         this.ventanGeneral.mostrarError("Ya existe un Grupo con esa ID");
                     }
@@ -164,7 +164,7 @@ public class Controlador implements ActionListener, Observer
                                     this.admin.agregarUsuario(nombreApe, email, telefono, nombreUsuario, contraseña,
                                                               this.bdd);
                                     this.ventanGeneral.mostrarValidacion("Creacion exitosa", "Creando usuario");
-                                } catch (OtraException e)
+                                } catch (GeneralException e)
                                 {
                                     this.ventanGeneral.mostrarError("Ya existe un usuario con ese nombre de usuario");
                                 }
@@ -207,7 +207,7 @@ public class Controlador implements ActionListener, Observer
                                         this.admin.agregarCliente(nombreApe, email, telefono, cuit, razonSocial,
                                                                   grupoClientes);
                                         this.ventanGeneral.mostrarValidacion("Creacion exitosa", "Creando Cliente");
-                                    } catch (OtraException e)
+                                    } catch (GeneralException e)
                                     {
                                         this.ventanGeneral.mostrarError("Ya existe un Cliente con ese nombre de usuario");
                                     }
@@ -327,7 +327,7 @@ public class Controlador implements ActionListener, Observer
         {
             if(this.admin!=null)
             {
-                this.admin.informeEstadoTareas();//Hay que revisar esto
+                this.admin.informeEstadoTareas("todos");//Hay que revisar esto
             }
         }
         if(actionEvent.getActionCommand().equals(DELETEGRUPO))

@@ -96,29 +96,6 @@ public class BaseDeDatos
         return resp;
     }
 
-    /** busca un usuario en la base de datos
-     * @param nombreusuario nombre se user
-     * @param pass contraseña
-     * @return el usuario que corresponda o nulo
-     * @pre Ambos parámetros deben ser distintos de null.<br>
-     */
-    public Usuario buscarUsuario(String nombreusuario, String pass)
-    {
-        Usuario resp = null;
-        int i = this.listaUsuarios.size();
-        Iterator it = this.listaUsuarios
-                          .values()
-                          .iterator();
-        while (it.hasNext() && resp == null)
-        {
-            Usuario aux = (Usuario) it.next();
-            if (aux.getNombreUsuario().equals(nombreusuario) && aux.getContraseña().equals(pass))
-                resp = aux;
-
-        }
-        return resp;
-    }
-
     /**elimina un grupo
      * @param i id del grupo
      * @pre i>=0<br>
