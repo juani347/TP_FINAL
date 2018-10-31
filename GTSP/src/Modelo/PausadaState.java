@@ -8,8 +8,10 @@ public class PausadaState implements IState
 {
     Tarea tarea;
 
-    /**metodo que pausa la tarea
+    /**
      * @param tarea
+     * <b>pre:</b> tarea!=null.<br>
+     * <b>post:</b> Se crea el estado.<br>
      */
     public PausadaState(Tarea tarea)
     {

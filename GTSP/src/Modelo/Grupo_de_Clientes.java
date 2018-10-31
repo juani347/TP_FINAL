@@ -13,6 +13,14 @@ public class Grupo_de_Clientes
     
     public Grupo_de_Clientes(){}
 
+    /**
+     * @param nombre
+     * @param ID
+     * <b>pre:</b> 
+     * nombre!=null && !equals("")<br>
+     * ID!=null.<br>
+     * <b>post:</b> Se crea un grupo de clientes.<br>
+     */
     public Grupo_de_Clientes(String nombre, int ID)
     {
         this.nombre = nombre;

@@ -30,6 +30,16 @@ public class Tarea
     
     public Tarea(){}
 
+    /**
+     * @param colaborador
+     * @param cliente
+     * @param servicio
+     * <b>pre:</b> 
+     * colaborador!=null.<br>
+     * cliente!=null.<br>
+     * servicio!=null.<br>
+     * <b>post:</b> Se crea una tarea.<br>
+     */
     public Tarea(Colaborador colaborador, Cliente cliente,Servicio servicio)
     {
         this.colaborador= colaborador;

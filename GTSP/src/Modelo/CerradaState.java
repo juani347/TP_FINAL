@@ -10,8 +10,10 @@ public class CerradaState implements IState
 {
     Tarea tarea;
 
-    /**finaliza el tiempo que tardo la tarea
+    /**
      * @param tarea
+     * <b>pre:</b> tarea!=null.<br>
+     * <b>post:</b> Se crea el estado y se setea la fecha de cierre de la tarea.<br>
      */
     public CerradaState(Tarea tarea)
     {

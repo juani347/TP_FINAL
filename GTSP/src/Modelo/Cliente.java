@@ -26,7 +26,17 @@ public class Cliente
     private String grupoClientes;
 
     public Cliente(){}
-    
+
+    /**
+     * @param nombreApe
+     * @param email
+     * @param telefono
+     * @param CUIT
+     * @param razonSocial
+     * @param grupoClientes
+     * <b>pre:</b> Todos los parametros deben ser distintos de null y distintos de vacio.<br>
+     * <b>post:</b> Se crea un cliente.<br>
+     */
     public Cliente(String nombreApe, String email, String telefono, String CUIT, String razonSocial,String grupoClientes)
     {
         this.nombreApe = nombreApe;

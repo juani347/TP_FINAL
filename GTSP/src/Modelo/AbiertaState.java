@@ -9,7 +9,12 @@ import java.util.ArrayList;
 public class AbiertaState implements IState
 {
     Tarea tarea;
-    
+
+    /**
+     * @param tarea 
+     * <b>pre:</b> tarea!=null.<br>
+     * <b>post:</b> Se crea el estado.<br>
+     */
     public AbiertaState(Tarea tarea)
     {
         this.tarea=tarea;

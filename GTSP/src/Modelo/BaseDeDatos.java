@@ -79,17 +79,19 @@ public class BaseDeDatos
     }
 
     /**Método que corrobora si tus datos son los del admin
-     * @param nombreusuario user de usuario
+     * @param nombreUsuario user de usuario
      * @param pass contraseña 
      * @return el admin o nulo
-     * <b>pre:</b> Ambos parámetros deben ser distintos de null.<br>
+     * <b>pre:</b>
+     * nombreUsuario!=null && !equals("")<br>
+     * pass!=null && !equals("")<br>
      */
-    public Administrador esAdmin(String nombreusuario, String pass)
+    public Administrador esAdmin(String nombreUsuario, String pass)
     {
         Administrador resp = null;
         if ((this.admin
                  .getNombreUsuario()
-                 .equals(nombreusuario) && this.admin
+                 .equals(nombreUsuario) && this.admin
                                                .getContraseña()
                                                .equals(pass)))
             resp = this.admin;

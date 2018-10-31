@@ -14,10 +14,12 @@ import java.io.FileOutputStream;
 public class Serialize
 {
     public static final String SERIALIZED_NAME = "basededatos.xml";
+    
     public Serialize()
     {
         super();
     }
+    
     /**
      *Método que serializa la base de datos del programa en un archvio XML
      * @param bdd Base de datos del programa a serializar, debe ser distinto de null.

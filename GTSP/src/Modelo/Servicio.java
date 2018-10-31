@@ -21,6 +21,16 @@ public class Servicio
         super();
     }
 
+    /**
+     * @param descripcion
+     * @param tipo
+     * @param costo
+     * <b>pre:</b> 
+     * descripcion!=null && !equals("")<br>
+     * tipo!=null && !equals("")<br>
+     * costo>=0<br>
+     * <b>post:</b> Se crea un servicio.<br>
+     */
     public Servicio(String descripcion, String tipo, double costo)
     {
         this.descripcion = descripcion;
