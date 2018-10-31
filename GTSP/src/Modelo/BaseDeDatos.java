@@ -82,9 +82,9 @@ public class BaseDeDatos
      * @param nombreusuario user de usuario
      * @param pass contraseña 
      * @return el admin o nulo
-     * @pre Ambos parámetros deben ser distintos de null.<br>
+     * <b>pre:</b> Ambos parámetros deben ser distintos de null.<br>
      */
-    public Administrador esadmin(String nombreusuario, String pass)
+    public Administrador esAdmin(String nombreusuario, String pass)
     {
         Administrador resp = null;
         if ((this.admin
@@ -98,7 +98,8 @@ public class BaseDeDatos
 
     /**elimina un grupo
      * @param i id del grupo
-     * @pre i>=0<br>
+     * <b>pre:</b>
+     * i>=0<br>
      */
     public void deleteGRupo(int i)
     {

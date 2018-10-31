@@ -102,7 +102,7 @@ public class Controlador implements ActionListener, Observer
         {
             String nombreusuario = this.ventanaLogin.darUsuario();
             String pass = this.ventanaLogin.darPass();
-            this.admin = this.bdd.esadmin(nombreusuario, pass);
+            this.admin = this.bdd.esAdmin(nombreusuario, pass);
             if (this.admin != null)
             {
                 this.ventanaLogin.setVisible(false);
