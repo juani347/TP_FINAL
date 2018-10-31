@@ -32,7 +32,16 @@ public class Usuario extends Observable
     {
         super();
     }
-
+    /**
+     * Constructor de la clase Usuario
+     * @param nombreApe Nombre y apellido del Colaborador o Administrador.
+     * @param email Cuenta de email del Colaborador o Administrador.
+     * @param telefono Telefono del Colaborador o Administrador.
+     * @param perfil Inica si el usuario es un administrador o un colaborador.
+     * @param nombreUsuario Nombre de usuario del Colaborador o Administrador que será utilizado para loggearse.
+     * @param contraseña Contraseña del Colaborador o Administrador que será utilizado para loggearse.
+     * @param base Referencia a la base de datos.
+     */
     public Usuario(String nombreApe, String email, String telefono, String perfil, String nombreUsuario, String contraseña, BaseDeDatos base)
     {
         this.nombreApe = nombreApe;

@@ -25,7 +25,9 @@ public class Colaborador extends Usuario
      * @param cliente a quien se le realiza
      * @param servicio elegido para la tarea
      * @throws GeneralException cuando el colaborador se encuentra haciendo una tarea en este momento
-     * @pre ID>=0,El resto de los parametros deben ser distintos de null.<br>
+     * @pre ID>=0<br>
+     * cliente!=null<br>
+     * servicio!=null<br>
      */
     public void agregarTarea(int ID,Cliente cliente,Servicio servicio) throws GeneralException
     {
