@@ -12,9 +12,9 @@ import java.util.Iterator;
 public class Administrador extends Usuario
 {
     
-    public Administrador(String string, String string1, String string2, String string3, String string4, String string5, BaseDeDatos base)
+    public Administrador(String nombreApe, String email, String telefono, String perfil, String nombreUsuario, String contraseña, BaseDeDatos base)
     {
-        super(string, string1, string2, string3, string4, string5,base);
+        super(nombreApe, email,telefono,perfil,nombreUsuario,contraseña,base);
     }
     
     public Administrador(){}

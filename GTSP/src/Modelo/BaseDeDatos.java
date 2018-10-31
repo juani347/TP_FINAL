@@ -15,7 +15,6 @@ import java.util.Iterator;
  */
 public class BaseDeDatos
 {
-    public static final String SERIALIZED_NAME = "basededatos.xml";
     private HashMap<String, Usuario> listaUsuarios = new HashMap<String, Usuario>();
     //private HashMap <String,ArrayList<Cliente>> clientes= new HashMap <String,ArrayList<Cliente>>();
     private HashMap<String, Cliente> clientes = new HashMap<String, Cliente>();
