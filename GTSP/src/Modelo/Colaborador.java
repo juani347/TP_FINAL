@@ -9,10 +9,11 @@ public class Colaborador extends Usuario
 {
     private HashMap<Integer,Tarea> tareas=new HashMap<Integer,Tarea>();
     
-    public Colaborador(String string, String string1, String string2, String string3, String string5,BaseDeDatos base)
+    public Colaborador(String nombreApe, String email, String telefono, String perfil, String nombreUsuario, String contraseña, BaseDeDatos base)
     {
-        super(string, string1, string2, string3, "Colaborador", string5,base);
+        super(nombreApe, email,telefono,"Colaborador",nombreUsuario,contraseña,base);
     }
+
 
     public Colaborador()
     {
