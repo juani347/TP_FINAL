@@ -45,7 +45,7 @@ public class Grupo_de_Clientes
     
     /**
      * @param ID
-     * <b>pre:</b> ID>0
+     * <b>pre:</b> ID>0.<br>
      */
     public void setID(int ID)
     {

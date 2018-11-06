@@ -12,7 +12,8 @@ public class CerradaState implements IState
 
     /**
      * @param tarea
-     * <b>pre:</b> tarea!=null.<br>
+     * <b>pre:</b> La tarea debe estar registrada en la base de datos.<br>
+     * tarea!=null.<br>
      * <b>post:</b> Se crea el estado y se setea la fecha de cierre de la tarea.<br>
      */
     public CerradaState(Tarea tarea)

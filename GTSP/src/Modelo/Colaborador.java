@@ -43,19 +43,30 @@ public class Colaborador extends Usuario
 
     /**metodo que continua con la tarea
      * @param ID de la tarea
-     * <b>pre:</b> ID>=0.<br>
+     * <b>pre:</b> La tarea debe estar registrada en la base de datos.<br>
+     * ID>=0.<br>
      */
     public void abrirTarea(int ID)
     {
         if (this.ningunaAbierta())
             tareas.get(ID).getEstado().abrir();
     }
-    
+
+    /**
+     * @param ID de la tarea
+     * <b>pre:</b> La tarea debe estar registrada en la base de datos.<br>
+     * ID>=0.<br>
+     */
     public void pausarTarea(int ID)
     {
         tareas.get(ID).getEstado().pausar();
     }
-    
+
+    /**
+     * @param ID de la tarea
+     * <b>pre:</b> La tarea debe estar registrada en la base de datos.<br>
+     * ID>=0.<br>
+     */
     public void cerrarTarea(int ID)
     {
         tareas.get(ID).getEstado().cerrar();

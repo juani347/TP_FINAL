@@ -161,7 +161,8 @@ public class Administrador extends Usuario
     /**Metodo que hace informe de estado de las tareas
      * @param colaborador nombre del colaborador cuyas tareas se informaran o "todos" para referirse al total de colaboradores <br>
      * @return un Arraylist de String sobre las tareas
-     * <b>pre:</b>Puede haber tareas en la base de datos o no<br>
+     * <b>pre:</b>Puede haber tareas en la base de datos o no.<br>
+     * El nombre del colaborador debe corresponder con un colaborador registrado en la base de datos.<br>
      * colaborador!=null && !equals("")<br>
      * <b>post:</b>Devuelve un informe sobre sus tareas.<br>
      */
@@ -199,7 +200,7 @@ public class Administrador extends Usuario
      * @param nombre nombre del cliente
      * @param inicio inicio del periodo 
      * @param fin valor final del perido
-     * <b>pre:</b>El cliente debe existir en la base de datos<br>
+     * <b>pre:</b>El nombre del cliente debe corresponder con un cliente registrado en la base de datos<br>
      * nombre!=null && !equals("")<br>
      * inicio!=null<br>
      * fin!=null<br>
@@ -269,7 +270,7 @@ public class Administrador extends Usuario
      * @param estado
      * @param inicio
      * @param fin
-     * <b>pre:</b>El nombre de usuario debe corresponder con un colaborador en la base de datos<br>
+     * <b>pre:</b>El nombre de usuario debe corresponder con un colaborador registrado en la base de datos<br>
      * usuario!=null && !equals("")<br>
      * estado!=null && !equals("")<br>
      * inicio!=null<br>
