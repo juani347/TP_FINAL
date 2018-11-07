@@ -23,7 +23,7 @@ public class Servicio
 
     /**
      * @param descripcion
-     * @param tipo
+     * @param tipo tipo de servicio "FIJO" o "POR HORA"
      * @param costo
      * <b>pre:</b> 
      * descripcion!=null && !equals("")<br>

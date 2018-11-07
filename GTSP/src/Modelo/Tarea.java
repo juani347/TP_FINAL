@@ -46,6 +46,7 @@ public class Tarea
         this.cliente = cliente;
         this.fechaInicio = new Date();
         this.estado=new AbiertaState(this);
+        this.servicio=servicio;
         num+=1;
         this.ID=num;
         this.verificaInvariante();
