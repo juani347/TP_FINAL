@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**Clase que usa State para el estado abierta de la tarea
  * <b>inv: </b><br>
@@ -42,6 +43,11 @@ public class AbiertaState implements IState
     {
         return "Abierta";
     }
+    
+    public long getHoras()
+    {
+        return ((new Date()).getTime() - this.tarea.getFechaInicio().getTime());
+    }
 
     /**Metodo que informa el estado de la tarea
      * @return String[] vector string con cada informacion solicitada por campo
@@ -55,7 +61,7 @@ public class AbiertaState implements IState
         informe[2]=tarea.getServicio().getDescripcion();
         informe[3]=tarea.getFechaInicio().toString();
         informe[4]=tarea.getEstado().toString();
-        informe[5]=tarea.getHoras().toString();
+        informe[5]=Long.toString((new Date()).getTime()-this.tarea.getFechaInicio().getTime());
         return informe;
     }
     
