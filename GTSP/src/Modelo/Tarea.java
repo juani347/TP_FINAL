@@ -156,10 +156,9 @@ public class Tarea
         return costoTotal;
     }
     
-    public Integer getHoras()
+    public long getHoras()
     {
-        Integer horas=null;
-        return horas;
+        return this.estado.getHoras();
     }
 
     /** Metodo que informa estado de la tarea

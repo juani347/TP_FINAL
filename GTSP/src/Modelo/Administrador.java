@@ -159,7 +159,7 @@ public class Administrador extends Usuario
     }
 
     /**Metodo que hace informe de estado de las tareas
-     * @param colaborador nombre del colaborador cuyas tareas se informaran o "todos" para referirse al total de colaboradores <br>
+     * @param colaborador nombre de usuario del colaborador cuyas tareas se informaran o "todos" para referirse al total de colaboradores <br>
      * @return un Arraylist de String sobre las tareas
      * <b>pre:</b>Puede haber tareas en la base de datos o no.<br>
      * El nombre del colaborador debe corresponder con un colaborador registrado en la base de datos.<br>
@@ -185,7 +185,7 @@ public class Administrador extends Usuario
             while (it.hasNext())
             {
                 Tarea tarea=it.next();
-                if (tarea.getColaborador().equals(colaborador))
+                if (tarea.getColaborador().getNombreUsuario().equals(colaborador))
                 {
                     aux= tarea.getInforme();
                     if (aux!=null)

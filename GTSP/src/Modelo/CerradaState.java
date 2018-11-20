@@ -46,6 +46,12 @@ public class CerradaState implements IState
     }
     
     @Override
+    public long getHoras()
+    {
+        return ((this.tarea.getFechaCierre().getTime()-this.tarea.getFechaInicio().getTime()));
+    }
+    
+    @Override
     public String[] getInforme()
     {
         return null;

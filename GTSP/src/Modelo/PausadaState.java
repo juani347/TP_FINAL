@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.util.Date;
+
 /**Clase que usa State para el estado pausada de la tarea
  * <b>inv: </b><br>
  * tarea!=null <br>
@@ -17,6 +19,7 @@ public class PausadaState implements IState
     public PausadaState(Tarea tarea)
     {
         this.tarea=tarea;
+        this.tarea.setFechaCierre(new Date());
         this.verificaInvariante();
     }
 
@@ -44,6 +47,12 @@ public class PausadaState implements IState
     {
         return "Pausada";
     }
+    
+    @Override
+    public long getHoras()
+    {
+        return ((this.tarea.getFechaCierre().getTime()-this.tarea.getFechaInicio().getTime()));
+    }
 
     /**Metodo que informa estado de la tarea
      * @return String[] vector string con cada informacion solicitada por campo
@@ -57,7 +66,7 @@ public class PausadaState implements IState
         informe[2]=tarea.getServicio().getDescripcion();
         informe[3]=tarea.getFechaInicio().toString();
         informe[4]=tarea.getEstado().toString();
-        informe[5]=tarea.getHoras().toString();
+        informe[5]=Long.toString((this.tarea.getFechaCierre().getTime()-this.tarea.getFechaInicio().getTime()));
         return informe;
     }
     
